@@ -1,0 +1,4 @@
+all:
+ active_days: 30
+ max_jobs: 10
+  
