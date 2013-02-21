@@ -9,6 +9,8 @@
         <?php endif ?>
     </title>
     <link rel="shortcut icon" href="/favicon.ico" />
+     <?php use_javascript('jquery-1.8.3.js') ?>
+    <?php use_javascript('search.js') ?>
     <?php include_javascripts() ?>
     <?php include_stylesheets() ?>
   </head>
@@ -31,7 +33,8 @@
  
             <div class="search">
               <h2>Ask for a job</h2>
-              <form action="" method="get">
+              <form action="job/search" method="get">
+              
                 <input type="text" name="keywords"
                   id="search_keywords" />
                 <input type="submit" value="search" />

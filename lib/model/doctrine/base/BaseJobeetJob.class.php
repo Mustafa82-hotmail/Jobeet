@@ -86,6 +86,7 @@ abstract class BaseJobeetJob extends sfDoctrineRecord
         $this->hasColumn('position', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
+             'readonly' => true,
              'length' => 255,
              ));
         $this->hasColumn('location', 'string', 255, array(

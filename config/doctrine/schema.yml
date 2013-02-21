@@ -15,7 +15,7 @@ JobeetJob:
     company:      { type: string(255), notnull: true }
     logo:         { type: string(255) }
     url:          { type: string(255) }
-    position:     { type: string(255), notnull: true }
+    position:     { type: string(255), notnull: true, readonly: true}
     location:     { type: string(255), notnull: true }
     description:  { type: string(4000), notnull: true }
     how_to_apply: { type: string(4000), notnull: true }
@@ -49,3 +49,91 @@ JobeetCategoryAffiliate:
   relations:
     JobeetCategory:  { onDelete: CASCADE, local: category_id, foreign: id }
     JobeetAffiliate: { onDelete: CASCADE, local: affiliate_id, foreign: id }
+    
+Thread:
+  columns:
+    title:
+      type: string(255)
+      notnull: true
+
+AnotherThread:
+  columns:
+    title:
+      type: string(255)
+      notnull: true 
+      
+      
+      
+
+      
+    
+Post:
+  columns:
+    thread_id:
+      type: integer
+      notnull: true
+    body:
+      type: clob
+      notnull: true
+    title:
+      type: string(255)
+    
+  relations:
+    Thread:
+      local: thread_id
+      foreign: id
+      onDelete: CASCADE
+      foreignAlias: Posts
+      
+      
+PostClone:
+  actAs:
+    Testable:
+      scoreColumn: score
+      className: Post
+      clonedFields: [body,title]
+  columns:
+    thread_id:
+      type: integer
+    body:
+      type: clob
+      notnull: true
+    title:
+      type: string(255)
+    score:
+      type: integer
+    post_id:
+      type: integer
+      
+      
+      
+      
+      
+PostAutoComplete:
+  actAs:
+    AutoCompletable:
+      relations:
+        Post:
+          defaultScore: 50
+          defaultNullScore: 1
+          foreignAlias: AutoCompleteRecord
+          className: Post
+          scoreColumn: score
+          stringColumn: name
+  columns:
+    title:
+      type: string(255)
+    post_id:
+      type: integer
+    score:
+      type: integer
+      notnull: true
+      default: 0
+  relations:
+    Post:
+      local: post_id
+      foreign: id
+      onDelete: SET NULL
+      foreignAlias: PostAutoComplete
+      foreignType: one
+    

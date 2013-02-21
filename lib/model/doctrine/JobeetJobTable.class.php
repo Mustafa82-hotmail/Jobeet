@@ -56,6 +56,8 @@ class JobeetJobTable extends Doctrine_Table
         $alias=$q->getRootAlias();
         $q->andWhere($alias.'.expires_at > ?',date('Y-m-d H:i:s', time()))
                 ->addOrderBy($alias.'.created_at DESC');
+        $q->andWhere($alias . '.is_activated = ?', 1);
+ 
         return $q;
     }
 }
