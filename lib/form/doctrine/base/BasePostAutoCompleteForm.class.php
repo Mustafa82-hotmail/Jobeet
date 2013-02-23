@@ -15,17 +15,21 @@ abstract class BasePostAutoCompleteForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'      => new sfWidgetFormInputHidden(),
-      'title'   => new sfWidgetFormInputText(),
-      'post_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Post'), 'add_empty' => true)),
-      'score'   => new sfWidgetFormInputText(),
+      'id'         => new sfWidgetFormInputHidden(),
+      'post_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Post'), 'add_empty' => true)),
+      'name'       => new sfWidgetFormInputText(),
+      'score'      => new sfWidgetFormInputText(),
+      'created_at' => new sfWidgetFormDateTime(),
+      'updated_at' => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
-      'id'      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'title'   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'post_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Post'), 'required' => false)),
-      'score'   => new sfValidatorInteger(array('required' => false)),
+      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'post_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Post'), 'required' => false)),
+      'name'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'score'      => new sfValidatorInteger(array('required' => false)),
+      'created_at' => new sfValidatorDateTime(),
+      'updated_at' => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('post_auto_complete[%s]');
