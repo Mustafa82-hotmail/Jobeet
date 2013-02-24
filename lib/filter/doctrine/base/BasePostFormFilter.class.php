@@ -15,13 +15,13 @@ abstract class BasePostFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'thread_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Thread'), 'add_empty' => true)),
       'body'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'title'     => new sfWidgetFormFilterInput(),
+      'name'      => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'thread_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Thread'), 'column' => 'id')),
       'body'      => new sfValidatorPass(array('required' => false)),
-      'title'     => new sfValidatorPass(array('required' => false)),
+      'name'      => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('post_filters[%s]');
@@ -44,7 +44,7 @@ abstract class BasePostFormFilter extends BaseFormFilterDoctrine
       'id'        => 'Number',
       'thread_id' => 'ForeignKey',
       'body'      => 'Text',
-      'title'     => 'Text',
+      'name'      => 'Text',
     );
   }
 }

@@ -17,6 +17,66 @@ class testActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
+      //$post=Doctrine_Core::getTable("Post")->findBy($fieldName, $value)
+      //$relation=Doctrine_Core::getTable("Post")->getRelation("Thread");
+      //$post=new Post();
+      //echo $post->getPostAutoComplete();
+      //echo Doctrine_Core::getTable("Post")->getRelation("Thread");die();
+          //$post=$results->getFirst();
+          //$post->setName("Hello");
+          //$post->save();
+ //     $record=$post->getPostAutoComplete();
+      $post=Doctrine_Core::getTable("Post")->findOneById(1);
+      $post->delete();
+      
+      
+      /*$thread=new Thread();
+      
+     $thread->setTitle("thread 1");
+     $thread->save();
+     $post=new Post();
+     $post->setName("hi");
+     $post->setThread($thread);
+     $post->setBody("Hiiiiiiiiiiiii");
+     $post->save();
+    /*  $r=new RandomAutoComplete();
+      $r->setName('hi');
+      $r->save();
+      
+    /*  $p=new PostAutoComplete();
+      $p->setName("hi");
+      $p->setPostId(1);
+      $p->save();
+      
+     /* $thread=new Thread();
+     $thread->setTitle("thread 1");
+     $thread->save();
+     $post=new Post();
+     $post->setName("hi");
+     $post->setThread($thread);
+     $post->setBody("Hiiiiiiiiiiiii");
+     $post->save();
+     /* $post=new Post();
+      $post->setAttribute($attr, $value);
+      if($post instanceof Doctrine_Record)
+      {
+          echo "true";
+      }
+      $relation=$post->getTable()->getRelation("Thread");
+      $columnName=$relation['local'];
+      if($post->hasRelation($columnName))
+      {
+          echo "true";
+      }
+      if(is_null($post->get($columnName)))
+      {
+          echo "true";
+      }
+      echo $relation;
+      die();
+      
+      
+      
       //$thread=new Thread();
       //$thread->actAs("Sluggable");
       /*$q= $thread->getTable()->createQuery('c')
@@ -25,11 +85,18 @@ class testActions extends sfActions
       $results=$q->execute();*/
       //print_r($results);die();
       
+   /*$pc=new PostClone();
       
     $thread=new Thread();
      $thread->setTitle("thread 1");
      $thread->save();
+    
+    
     $post = new Post();
+//  /  $post->hasColumn($name);
+//    $post->actAs("Timestampable");
+    
+    
     $post->thread_id = 1;
     $post->body = 'body sadfsa of the post';
     

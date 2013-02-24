@@ -32,6 +32,17 @@ class CountCache extends Doctrine_Template
       $relatedTable = $this->_table->getRelation($relation)->getTable();
       $this->_options['relations'][$relation]['className'] = $relatedTable->getOption('name');
       $relatedTable->setColumn($columnName, 'integer', null, array('default' => 0));
+      $testable0 = new Testable(array(
+             'scoreColumn' => 'score',
+             'className' => 'Post',
+             'clonedFields' => 
+             array(
+              0 => 'body',
+              1 => 'title',
+             ),
+             ));
+       
+      $relatedTable->addTemplate("Testable", $testable0);
     }
     $this->addListener(new CountCacheListener($this->_options));
 

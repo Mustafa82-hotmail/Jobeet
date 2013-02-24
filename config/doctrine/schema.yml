@@ -68,6 +68,10 @@ AnotherThread:
       
     
 Post:
+  actAs:
+    Mus_AutoCompleteSource:
+      className: PostAutoComplete
+      autoCompleteField: name
   columns:
     thread_id:
       type: integer
@@ -75,9 +79,8 @@ Post:
     body:
       type: clob
       notnull: true
-    title:
-      type: string(255)
-    
+    name:
+      type: string(255)   
   relations:
     Thread:
       local: thread_id
@@ -85,7 +88,29 @@ Post:
       onDelete: CASCADE
       foreignAlias: Posts
       
+PostAutoComplete:
+  actAs:
+    Mus_AutoCompletable:
+      relation:
+        Post:
+          defaultScore: 50
+  columns:
+    post_id: 
+      type: integer
+      notnull: false
+  relations:
+    Post:
+      local: post_id
+      foreign: id
+      onDelete: SET NULL
+      foreignAlias: AutoCompleteRecord
+      foreignType: one  
+      onDelete: SET NULL
       
+      
+RandomAutoComplete:
+  actAs: [Mus_AutoCompletable]
+
 PostClone:
   actAs:
     Testable:
@@ -109,31 +134,6 @@ PostClone:
       
       
       
-PostAutoComplete:
-  actAs:
-    AutoCompletable:
-      relations:
-        Post:
-          defaultScore: 50
-          defaultNullScore: 1
-          foreignAlias: AutoCompleteRecord
-          className: Post
-          scoreColumn: score
-          stringColumn: name
-  columns:
-    title:
-      type: string(255)
-    post_id:
-      type: integer
-    score:
-      type: integer
-      notnull: true
-      default: 0
-  relations:
-    Post:
-      local: post_id
-      foreign: id
-      onDelete: SET NULL
-      foreignAlias: PostAutoComplete
-      foreignType: one
+
+      
     

@@ -33,8 +33,10 @@ class AutoCompletable extends Doctrine_Template{
           }
           
           
-          
+          $this->addListener(new CloneListner(array()), "Post");
       }
+      
+      
       //echo get_class($this);die();
       //$this->addListener(new AutoCompletableListner($this->_options));
       //$relatedTable->addListener(new AutoCompletableListner($this->_options));

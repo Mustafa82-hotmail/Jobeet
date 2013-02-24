@@ -18,14 +18,14 @@ abstract class BasePostForm extends BaseFormDoctrine
       'id'        => new sfWidgetFormInputHidden(),
       'thread_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Thread'), 'add_empty' => false)),
       'body'      => new sfWidgetFormTextarea(),
-      'title'     => new sfWidgetFormInputText(),
+      'name'      => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'        => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'thread_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Thread'))),
       'body'      => new sfValidatorString(),
-      'title'     => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'name'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('post[%s]');
