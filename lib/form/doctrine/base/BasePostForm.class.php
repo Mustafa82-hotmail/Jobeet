@@ -19,6 +19,7 @@ abstract class BasePostForm extends BaseFormDoctrine
       'thread_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Thread'), 'add_empty' => false)),
       'body'      => new sfWidgetFormTextarea(),
       'name'      => new sfWidgetFormInputText(),
+      'post_type' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -26,6 +27,7 @@ abstract class BasePostForm extends BaseFormDoctrine
       'thread_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Thread'))),
       'body'      => new sfValidatorString(),
       'name'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'post_type' => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('post[%s]');

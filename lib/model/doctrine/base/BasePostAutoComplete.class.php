@@ -37,7 +37,7 @@ abstract class BasePostAutoComplete extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'SET NULL'));
 
-        $mus_autocompletable0 = new Mus_AutoCompletable(array(
+        $autocompletable0 = new AutoCompletable(array(
              'relation' => 
              array(
               'Post' => 
@@ -46,6 +46,6 @@ abstract class BasePostAutoComplete extends sfDoctrineRecord
               ),
              ),
              ));
-        $this->actAs($mus_autocompletable0);
+        $this->actAs($autocompletable0);
     }
 }

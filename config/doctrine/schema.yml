@@ -55,6 +55,8 @@ Thread:
     title:
       type: string(255)
       notnull: true
+    posts_status_number:
+      type: array
 
 AnotherThread:
   columns:
@@ -69,9 +71,25 @@ AnotherThread:
     
 Post:
   actAs:
-    Mus_AutoCompleteSource:
+    AutoCompleteSource:
       className: PostAutoComplete
       autoCompleteField: name
+    CountCache:
+      relations:
+        #Thread:
+          #cache_type: normal
+          #columnName: posts_number
+          #foreignAlias: Posts
+        #Thread:
+          #cache_type: cacheids
+          #columnName: posts_ids
+          #foreignAlias: Posts
+        Thread:
+          cache_type: attributecache
+          columnName: posts_status_number
+          targetAttribute: post_type
+          attributeValues: [0,1,2]
+          foreignAlias: Posts
   columns:
     thread_id:
       type: integer
@@ -80,7 +98,10 @@ Post:
       type: clob
       notnull: true
     name:
-      type: string(255)   
+      type: string(255)
+    post_type:
+      type: integer
+      
   relations:
     Thread:
       local: thread_id
@@ -90,7 +111,7 @@ Post:
       
 PostAutoComplete:
   actAs:
-    Mus_AutoCompletable:
+    AutoCompletable:
       relation:
         Post:
           defaultScore: 50
@@ -109,7 +130,7 @@ PostAutoComplete:
       
       
 RandomAutoComplete:
-  actAs: [Mus_AutoCompletable]
+  actAs: [AutoCompletable]
 
 PostClone:
   actAs:
@@ -129,11 +150,5 @@ PostClone:
       type: integer
     post_id:
       type: integer
-      
-      
-      
-      
-      
 
-      
-    
+

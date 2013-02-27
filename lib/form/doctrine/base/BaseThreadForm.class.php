@@ -15,13 +15,15 @@ abstract class BaseThreadForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'    => new sfWidgetFormInputHidden(),
-      'title' => new sfWidgetFormInputText(),
+      'id'                  => new sfWidgetFormInputHidden(),
+      'title'               => new sfWidgetFormInputText(),
+      'posts_status_number' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'id'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'title' => new sfValidatorString(array('max_length' => 255)),
+      'id'                  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'title'               => new sfValidatorString(array('max_length' => 255)),
+      'posts_status_number' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('thread[%s]');

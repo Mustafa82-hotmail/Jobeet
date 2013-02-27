@@ -8,17 +8,20 @@
  * @property integer $thread_id
  * @property clob $body
  * @property string $name
+ * @property integer $post_type
  * @property Thread $Thread
  * @property PostAutoComplete $AutoCompleteRecord
  * 
  * @method integer          getThreadId()           Returns the current record's "thread_id" value
  * @method clob             getBody()               Returns the current record's "body" value
  * @method string           getName()               Returns the current record's "name" value
+ * @method integer          getPostType()           Returns the current record's "post_type" value
  * @method Thread           getThread()             Returns the current record's "Thread" value
  * @method PostAutoComplete getAutoCompleteRecord() Returns the current record's "AutoCompleteRecord" value
  * @method Post             setThreadId()           Sets the current record's "thread_id" value
  * @method Post             setBody()               Sets the current record's "body" value
  * @method Post             setName()               Sets the current record's "name" value
+ * @method Post             setPostType()           Sets the current record's "post_type" value
  * @method Post             setThread()             Sets the current record's "Thread" value
  * @method Post             setAutoCompleteRecord() Sets the current record's "AutoCompleteRecord" value
  * 
@@ -44,6 +47,9 @@ abstract class BasePost extends sfDoctrineRecord
              'type' => 'string',
              'length' => 255,
              ));
+        $this->hasColumn('post_type', 'integer', null, array(
+             'type' => 'integer',
+             ));
     }
 
     public function setUp()
@@ -58,10 +64,29 @@ abstract class BasePost extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'post_id'));
 
-        $mus_autocompletesource0 = new Mus_AutoCompleteSource(array(
+        $autocompletesource0 = new AutoCompleteSource(array(
              'className' => 'PostAutoComplete',
              'autoCompleteField' => 'name',
              ));
-        $this->actAs($mus_autocompletesource0);
+        $countcache0 = new CountCache(array(
+             'relations' => 
+             array(
+              'Thread' => 
+              array(
+              'cache_type' => 'attributecache',
+              'columnName' => 'posts_status_number',
+              'targetAttribute' => 'post_type',
+              'attributeValues' => 
+              array(
+               0 => 0,
+               1 => 1,
+               2 => 2,
+              ),
+              'foreignAlias' => 'Posts',
+              ),
+             ),
+             ));
+        $this->actAs($autocompletesource0);
+        $this->actAs($countcache0);
     }
 }
