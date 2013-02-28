@@ -21,8 +21,8 @@ abstract class BaseRandomAutoComplete extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $mus_autocompletable0 = new Mus_AutoCompletable(array(
+        $autocompletable0 = new AutoCompletable(array(
              ));
-        $this->actAs($mus_autocompletable0);
+        $this->actAs($autocompletable0);
     }
 }

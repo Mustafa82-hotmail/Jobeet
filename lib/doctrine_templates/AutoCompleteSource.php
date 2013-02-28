@@ -1,16 +1,12 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of Mus_AutoCompleteSource
+ * Description of Mus_AutoCompleteSource: any entity that implement the AutoCompleteSource will act as a source for an autocompletable entities. This 
+ * behaviour will expect the class name of the autocompletable class which is mandatory and the name of the field to be used in autocomplete which is optional.
  *
  * @author mustafa
  */
-class Mus_AutoCompleteSource extends Doctrine_Template{
+class AutoCompleteSource extends Doctrine_Template{
     protected $_options = array();
     public function setup(){
         if(!isset($this->_options['className']))

@@ -18,34 +18,138 @@ class CountCache extends Doctrine_Template
  
   public function setTableDefinition()
   {
+      
     foreach ($this->_options['relations'] as $relation => $options)
     {
-        //echo $this->getTable()->getTableName();
-      // Build column name if one is not given
-      if (!isset($options['columnName']))
-      {
-        $this->_options['relations'][$relation]['columnName'] = 'num_'.Doctrine_Inflector::tableize($this->getTable()->getOption('name'));
-      }
       
-      // Add the column to the related model
-      $columnName = $this->_options['relations'][$relation]['columnName'];
-      $relatedTable = $this->_table->getRelation($relation)->getTable();
-      $this->_options['relations'][$relation]['className'] = $relatedTable->getOption('name');
-      $relatedTable->setColumn($columnName, 'integer', null, array('default' => 0));
-      $testable0 = new Testable(array(
-             'scoreColumn' => 'score',
-             'className' => 'Post',
-             'clonedFields' => 
-             array(
-              0 => 'body',
-              1 => 'title',
-             ),
-             ));
-       
-      $relatedTable->addTemplate("Testable", $testable0);
+        
+      if($this->getInvoker()->getTable()->hasRelation($relation))  
+      {
+          
+          if(!isset($options['cache_type']))  
+            {
+                $this->_options['relations'][$relation]['cache_type']="normal";
+            }
+
+            if($this->_options['relations'][$relation]['cache_type']=="normal")
+            {
+                
+                if (!isset($options['columnName']))
+                {
+                  $this->_options['relations'][$relation]['columnName'] = Doctrine_Inflector::tableize($this->getTable()->getOption('name'))."s_number";
+
+                }
+
+                $columnName = $this->_options['relations'][$relation]['columnName'];
+                $relatedTable = $this->_table->getRelation($relation)->getTable();
+                $this->_options['relations'][$relation]['className'] = $relatedTable->getOption('name');
+                
+                
+                if(!$relatedTable->hasColumn($columnName))
+                {
+                    throw new LogicException(Doctrine_Inflector::tableize($this->getTable()->getOption('name'))." should have a column of name $columnName and type Integer
+                            for the CountCache behavior of type normal");
+                }
+                $type=$relatedTable->getColumnDefinition($columnName);
+                 if($type['type']!="integer")
+                {
+                   
+                    throw new LogicException(Doctrine_Inflector::tableize($this->getTable()->getOption('name'))." should have a column of name $columnName and type Integer
+                            for the CountCache behavior of type normal");
+                }
+                
+                
+
+            }
+            elseif($this->_options['relations'][$relation]['cache_type']=="cacheids")
+            {
+                if (!isset($options['columnName']))
+                {
+                  $this->_options['relations'][$relation]['columnName'] = Doctrine_Inflector::tableize($this->getTable()->getOption('name'))."s_ids";
+
+                }
+
+                $columnName = $this->_options['relations'][$relation]['columnName'];
+                $relatedTable = $this->_table->getRelation($relation)->getTable();
+                $this->_options['relations'][$relation]['className'] = $relatedTable->getOption('name'); 
+                if(!$relatedTable->hasColumn($columnName))
+                {
+                    throw new LogicException(Doctrine_Inflector::tableize($this->getTable()->getOption('name'))." should have a column of name $columnName and type Array
+                            for the CountCache behavior of type cacheids");
+                }
+                $type=$relatedTable->getColumnDefinition($columnName);
+                if($type['type']!="array")
+                {
+                    
+                    throw new LogicException(Doctrine_Inflector::tableize($this->getTable()->getOption('name'))." should have a column of name $columnName and type Array
+                            for the CountCache behavior of type cacheids");
+                }
+                
+                
+            }
+            elseif($this->_options['relations'][$relation]['cache_type']=="attributecache")
+            {
+                
+                if (!isset($options['columnName']))
+                {
+                  $this->_options['relations'][$relation]['columnName'] = Doctrine_Inflector::tableize($this->getTable()->getOption('name'))."s_status_number";
+
+                }
+                if(!isset($options['targetAttribute']))
+                {
+                    throw new LogicException("targetAttribute is missing and it's mandatory for countCache behavior of type  attributecache");
+                }
+                if(!isset($options['attributeValues']))
+                {
+                    throw new LogicException("attributeValues is missing and it's mandatory for countCache behavior of type  attributecache");
+                }
+                
+                
+                $values=array();
+                if(is_array($options['attributeValues']))
+                {
+                    foreach($options['attributeValues'] as $value)
+                    {
+                        $values[$value]=array();
+                    }
+                    
+                }else
+                {
+                    $values[$options['attributeValues']]=array();
+                }
+                
+                
+                $columnName = $this->_options['relations'][$relation]['columnName'];
+                $relatedTable = $this->_table->getRelation($relation)->getTable();
+                $this->_options['relations'][$relation]['className'] = $relatedTable->getOption('name');
+                if(!$relatedTable->hasColumn($columnName))
+                {
+                    throw new LogicException(Doctrine_Inflector::tableize($this->getTable()->getOption('name'))." should have a column of name $columnName and type Array
+                            for the CountCache behavior of type attributecache");
+                }
+                $type=$relatedTable->getColumnDefinition($columnName);
+                if($type['type']!="array")
+                {
+                    
+                    throw new LogicException(Doctrine_Inflector::tableize($this->getTable()->getOption('name'))." should have a column of name $columnName and type Array
+                            for the CountCache behavior of type attributecache");
+                }
+                
+            }
+            else{
+                throw new LogicException($this->_options['relations'][$relation]['cache_type']." is not recognized as a valid type for the Cachable behaviour!");
+            }
+      }else{
+          throw new LogicException($this->_options['relations'][$relation]['cache_type']." is not recognized as a relation for the table !".$this->getInvoker()->getTable()->getOption('name'));
+      }
+        
+        
+      
+        
+      
+      
     }
     $this->addListener(new CountCacheListener($this->_options));
-
   }
 }
 ?>
