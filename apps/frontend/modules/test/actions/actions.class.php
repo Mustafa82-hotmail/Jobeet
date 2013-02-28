@@ -26,9 +26,9 @@ class testActions extends sfActions
           //$post->setName("Hello");
           //$post->save();
  //     $record=$post->getPostAutoComplete();
-      $post=Doctrine_Core::getTable("Post")->findOneById(1);
-      $post->delete();
-      
+      //
+      echo "hiiiiiiiiii";
+      die();
       
       /*$thread=new Thread();
       
