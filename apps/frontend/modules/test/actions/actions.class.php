@@ -18,6 +18,10 @@ class testActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
       $thread=Doctrine_Core::getTable("Thread")->find(1);
+      
+      $thread->delete();
+//      $thread->delete();
+      /*$thread=Doctrine_Core::getTable("Thread")->find(1);
       $thread->delete();
       /*$thread=Doctrine_Core::getTable("Thread")->find(3);
       

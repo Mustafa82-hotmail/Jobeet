@@ -1,4 +1,5 @@
 CREATE TABLE another_thread (id BIGINT AUTO_INCREMENT, title VARCHAR(255) NOT NULL, status VARCHAR(255), referenceid BIGINT, referencetype VARCHAR(255), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE another_thread1 (id BIGINT AUTO_INCREMENT, title VARCHAR(255) NOT NULL, status VARCHAR(255), referenceid BIGINT, referencetype VARCHAR(255), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE jobeet_affiliate (id BIGINT AUTO_INCREMENT, url VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL UNIQUE, token VARCHAR(255) NOT NULL, is_active TINYINT(1) DEFAULT '0' NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE jobeet_category (id BIGINT AUTO_INCREMENT, name VARCHAR(255) NOT NULL UNIQUE, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, slug VARCHAR(255), UNIQUE INDEX jobeet_category_sluggable_idx (slug), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE jobeet_category_affiliate (category_id BIGINT, affiliate_id BIGINT, PRIMARY KEY(category_id, affiliate_id)) ENGINE = INNODB;

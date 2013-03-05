@@ -53,13 +53,21 @@ JobeetCategoryAffiliate:
 Thread:
   actAs:
     AttributeUpdatable:
-      referenceModel: AnotherThread
-      onDelete: SET NULL
-      locateMapping:
-        locateMapping1: {referenceLocateAttribute: referenceId, localLocateAttribute: id}
-        locateMapping2: {referenceLocateAttribute: referenceType, localLocateValue: <?php echo Thread::THREAD_TYPE;?>}
-      updateMapping:
-        mapping1: {localAttribute: state, referenceAttribute: status, localValues: [0,1,2], referenceValues: [0,1,2]}
+      referencesModels:
+        AnotherThread:
+          onDelete: SET NULL
+          locateMapping:
+            locateMapping1: {referenceLocateAttribute: referenceId, localLocateAttribute: id}
+            locateMapping2: {referenceLocateAttribute: referenceType, localLocateValue: <?php echo Thread::THREAD_TYPE;?>}
+          updateMapping:
+            mapping1: {localAttribute: state, referenceAttribute: status, localValues: [0,1,2], referenceValues: [0,1,0]}
+        AnotherThread1:
+          onDelete: CASCADE
+          locateMapping:
+            locateMapping1: {referenceLocateAttribute: referenceId, localLocateAttribute: id}
+            locateMapping2: {referenceLocateAttribute: referenceType, localLocateValue: <?php echo Thread::THREAD_TYPE;?>}
+          updateMapping:
+            mapping1: {localAttribute: state, referenceAttribute: status, localValues: [0,1,2], referenceValues: [2,1,0]}
       
   columns:
     title:
@@ -85,7 +93,18 @@ AnotherThread:
       type: string(255)
       
       
-      
+AnotherThread1:
+  columns:
+    title:
+      type: string(255)
+      notnull: true 
+    status:
+      type: string(255)
+      notnull: false
+    referenceId:
+      type: integer
+    referenceType:
+      type: string(255)    
 
       
     

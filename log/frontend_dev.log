@@ -3640,3 +3640,634 @@ Mar 05 14:59:47 symfony [info] {sfWebDebugLogger} Action "test/index" 49.76 ms (
 Mar 05 14:59:47 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.10 ms (12)
 Mar 05 14:59:47 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 12.12 ms (1)
 Mar 05 14:59:47 symfony [info] {sfWebResponse} Send content (42222 o)
+Mar 05 16:14:05 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 16:14:05 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 16:14:05 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 16:14:05 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 16:27:08 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 16:27:08 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 16:27:08 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 16:27:08 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 16:28:22 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 16:28:22 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 16:28:22 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 16:28:22 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 16:28:22 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 16:28:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 16:28:22 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 16:28:22 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (0, 1)
+Mar 05 16:28:22 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (0, 2)
+Mar 05 16:28:22 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (2, 1)
+Mar 05 16:28:22 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 16:28:22 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 16:28:22 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 16:28:22 symfony [info] {main} Get slot "title"
+Mar 05 16:28:22 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 16:28:22 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 16:28:22 symfony [info] {sfWebDebugLogger} Configuration 1.25 ms (9)
+Mar 05 16:28:22 symfony [info] {sfWebDebugLogger} Factories 17.50 ms (1)
+Mar 05 16:28:22 symfony [info] {sfWebDebugLogger} Action "test/index" 32.40 ms (1)
+Mar 05 16:28:22 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (6)
+Mar 05 16:28:22 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 5.89 ms (1)
+Mar 05 16:28:22 symfony [info] {sfWebResponse} Send content (36712 o)
+Mar 05 16:28:33 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 16:28:33 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 16:28:33 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 16:28:33 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 16:28:33 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 16:28:33 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 16:28:33 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 16:28:33 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (2, 1)
+Mar 05 16:28:33 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (2, 2)
+Mar 05 16:28:33 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (0, 1)
+Mar 05 16:28:33 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 16:28:33 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 16:28:33 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 16:28:33 symfony [info] {main} Get slot "title"
+Mar 05 16:28:33 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 16:28:33 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 16:28:33 symfony [info] {sfWebDebugLogger} Configuration 1.12 ms (9)
+Mar 05 16:28:33 symfony [info] {sfWebDebugLogger} Factories 18.58 ms (1)
+Mar 05 16:28:33 symfony [info] {sfWebDebugLogger} Action "test/index" 58.83 ms (1)
+Mar 05 16:28:33 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (6)
+Mar 05 16:28:33 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 7.09 ms (1)
+Mar 05 16:28:33 symfony [info] {sfWebResponse} Send content (36713 o)
+Mar 05 16:28:59 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 16:28:59 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 16:28:59 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 16:28:59 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 16:28:59 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 16:28:59 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 16:28:59 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 16:28:59 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (2, 1)
+Mar 05 16:28:59 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (0, 1)
+Mar 05 16:28:59 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 16:28:59 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 16:28:59 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 16:28:59 symfony [info] {main} Get slot "title"
+Mar 05 16:28:59 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 16:28:59 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 16:28:59 symfony [info] {sfWebDebugLogger} Configuration 1.03 ms (9)
+Mar 05 16:28:59 symfony [info] {sfWebDebugLogger} Factories 19.16 ms (1)
+Mar 05 16:28:59 symfony [info] {sfWebDebugLogger} Action "test/index" 36.95 ms (1)
+Mar 05 16:28:59 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.05 ms (5)
+Mar 05 16:28:59 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 6.35 ms (1)
+Mar 05 16:28:59 symfony [info] {sfWebResponse} Send content (35804 o)
+Mar 05 16:29:09 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 16:29:09 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 16:29:09 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 16:29:09 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 16:29:09 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 16:29:09 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 16:29:09 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 16:29:09 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (0, 1)
+Mar 05 16:29:09 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (2, 1)
+Mar 05 16:29:09 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 16:29:09 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 16:29:09 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 16:29:09 symfony [info] {main} Get slot "title"
+Mar 05 16:29:09 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 16:29:09 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 16:29:09 symfony [info] {sfWebDebugLogger} Configuration 1.22 ms (9)
+Mar 05 16:29:09 symfony [info] {sfWebDebugLogger} Factories 20.45 ms (1)
+Mar 05 16:29:09 symfony [info] {sfWebDebugLogger} Action "test/index" 38.63 ms (1)
+Mar 05 16:29:09 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (5)
+Mar 05 16:29:09 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 10.85 ms (1)
+Mar 05 16:29:09 symfony [info] {sfWebResponse} Send content (35807 o)
+Mar 05 17:02:06 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 17:02:06 symfony [info] {myUser} Automatic user logout due to timeout
+Mar 05 17:02:06 symfony [info] {myUser} User is not authenticated
+Mar 05 17:02:06 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 17:02:06 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 17:02:06 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 17:02:06 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 17:02:06 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 17:02:06 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 17:02:06 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (2, 1)
+Mar 05 17:02:06 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (0, 1)
+Mar 05 17:02:06 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 17:02:06 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 17:02:06 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 17:02:06 symfony [info] {main} Get slot "title"
+Mar 05 17:02:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 17:02:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 17:02:06 symfony [info] {sfWebDebugLogger} Configuration 1.30 ms (9)
+Mar 05 17:02:06 symfony [info] {sfWebDebugLogger} Factories 19.22 ms (1)
+Mar 05 17:02:06 symfony [info] {sfWebDebugLogger} Action "test/index" 34.09 ms (1)
+Mar 05 17:02:06 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (5)
+Mar 05 17:02:06 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 12.24 ms (1)
+Mar 05 17:02:06 symfony [info] {sfWebResponse} Send content (36516 o)
+Mar 05 17:02:39 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 17:02:39 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 17:02:39 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 17:02:39 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 17:02:39 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 17:02:39 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 17:02:39 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 17:02:39 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (0, 1)
+Mar 05 17:02:39 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (0, 3)
+Mar 05 17:02:39 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (2, 1)
+Mar 05 17:02:39 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 17:02:39 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 17:02:39 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 17:02:39 symfony [info] {main} Get slot "title"
+Mar 05 17:02:39 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 17:02:39 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 17:02:39 symfony [info] {sfWebDebugLogger} Configuration 1.73 ms (9)
+Mar 05 17:02:39 symfony [info] {sfWebDebugLogger} Factories 17.82 ms (1)
+Mar 05 17:02:39 symfony [info] {sfWebDebugLogger} Action "test/index" 33.73 ms (1)
+Mar 05 17:02:39 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (6)
+Mar 05 17:02:39 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 8.73 ms (1)
+Mar 05 17:02:39 symfony [info] {sfWebResponse} Send content (36712 o)
+Mar 05 17:02:52 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 17:02:52 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 17:02:52 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 17:02:52 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 17:02:52 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 17:02:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 17:02:52 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 17:02:52 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referenceid = ? WHERE id = ? - (, 1)
+Mar 05 17:02:52 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referencetype = ? WHERE id = ? - (, 1)
+Mar 05 17:02:52 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referenceid = ? WHERE id = ? - (, 3)
+Mar 05 17:02:52 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referencetype = ? WHERE id = ? - (, 3)
+Mar 05 17:02:52 symfony [info] {Doctrine_Connection_Statement} execute : DELETE FROM thread WHERE id = ? - (1)
+Mar 05 17:02:52 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 17:02:52 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 17:02:52 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 17:02:52 symfony [info] {main} Get slot "title"
+Mar 05 17:02:52 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 17:02:52 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 17:02:52 symfony [info] {sfWebDebugLogger} Configuration 1.16 ms (9)
+Mar 05 17:02:52 symfony [info] {sfWebDebugLogger} Factories 20.25 ms (1)
+Mar 05 17:02:52 symfony [info] {sfWebDebugLogger} Action "test/index" 40.83 ms (1)
+Mar 05 17:02:52 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.05 ms (8)
+Mar 05 17:02:52 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 6.73 ms (1)
+Mar 05 17:02:52 symfony [info] {sfWebResponse} Send content (38546 o)
+Mar 05 18:12:45 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:12:45 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:12:45 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:12:45 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:12:45 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:12:45 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:12:45 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (2, 1)
+Mar 05 18:12:45 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:12:45 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:12:45 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:12:45 symfony [info] {main} Get slot "title"
+Mar 05 18:12:45 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:12:45 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:12:45 symfony [info] {sfWebDebugLogger} Configuration 1.34 ms (9)
+Mar 05 18:12:45 symfony [info] {sfWebDebugLogger} Factories 19.06 ms (1)
+Mar 05 18:12:45 symfony [info] {sfWebDebugLogger} Action "test/index" 34.44 ms (1)
+Mar 05 18:12:45 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (3)
+Mar 05 18:12:45 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 6.67 ms (1)
+Mar 05 18:12:45 symfony [info] {sfWebResponse} Send content (33109 o)
+Mar 05 18:13:39 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Mar 05 18:13:39 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:13:39 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:13:39 symfony [info] {jobActions} Call "jobActions->executeIndex()"
+Mar 05 18:13:40 symfony [err] {Doctrine_Table_Exception} Unknown method JobeetCategoryTable::getWithJobs
+Mar 05 18:13:40 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 05 18:13:40 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:13:40 symfony [info] {sfWebDebugLogger} Configuration 1.52 ms (8)
+Mar 05 18:13:40 symfony [info] {sfWebDebugLogger} Factories 23.05 ms (1)
+Mar 05 18:13:40 symfony [info] {sfWebDebugLogger} Action "job/index" 50.50 ms (1)
+Mar 05 18:13:48 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:13:48 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:13:48 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:13:48 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:13:48 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:13:48 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:14:10 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (2, 1)
+Mar 05 18:14:10 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:14:10 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:14:10 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:14:10 symfony [info] {main} Get slot "title"
+Mar 05 18:14:10 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:14:10 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:14:10 symfony [info] {sfWebDebugLogger} Configuration 1.65 ms (9)
+Mar 05 18:14:10 symfony [info] {sfWebDebugLogger} Factories 20.04 ms (1)
+Mar 05 18:14:10 symfony [info] {sfWebDebugLogger} Action "test/index" 21944.74 ms (1)
+Mar 05 18:14:10 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 05 18:14:10 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 11.09 ms (1)
+Mar 05 18:14:10 symfony [info] {sfWebResponse} Send content (33506 o)
+Mar 05 18:14:17 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:14:17 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:14:17 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:14:17 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:14:17 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:14:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:14:52 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (2, 1)
+Mar 05 18:14:52 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:14:52 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:14:52 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:14:52 symfony [info] {main} Get slot "title"
+Mar 05 18:14:52 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:14:52 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:14:52 symfony [info] {sfWebDebugLogger} Configuration 1.70 ms (9)
+Mar 05 18:14:52 symfony [info] {sfWebDebugLogger} Factories 19.76 ms (1)
+Mar 05 18:14:52 symfony [info] {sfWebDebugLogger} Action "test/index" 35118.67 ms (1)
+Mar 05 18:14:52 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 05 18:14:52 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 15.73 ms (1)
+Mar 05 18:14:52 symfony [info] {sfWebResponse} Send content (33538 o)
+Mar 05 18:17:51 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:17:51 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:17:51 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:17:51 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:17:51 symfony [notice] {sfWebDebugLogger}  Notice at /home/mustafa/sfprojects/jobeet/lib/doctrine_templates/AttributeUpdatable.php on line 38 (Undefined index: referenceModel)
+Mar 05 18:17:51 symfony [err] {Doctrine_Exception} Couldn't find class 
+Mar 05 18:17:51 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 05 18:17:51 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:17:51 symfony [info] {sfWebDebugLogger} Configuration 44.23 ms (10)
+Mar 05 18:17:51 symfony [info] {sfWebDebugLogger} Factories 21.07 ms (1)
+Mar 05 18:17:51 symfony [info] {sfWebDebugLogger} Action "test/index" 115.13 ms (1)
+Mar 05 18:18:12 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:18:12 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:18:12 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:18:12 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:18:14 symfony [notice] {sfWebDebugLogger}  Notice at /home/mustafa/sfprojects/jobeet/lib/doctrine_templates/AttributeUpdatable.php on line 38 (Undefined index: referenceModel)
+Mar 05 18:18:15 symfony [err] {Doctrine_Exception} Couldn't find class 
+Mar 05 18:18:15 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 05 18:18:15 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:18:15 symfony [info] {sfWebDebugLogger} Configuration 45.53 ms (10)
+Mar 05 18:18:15 symfony [info] {sfWebDebugLogger} Factories 21.57 ms (1)
+Mar 05 18:18:15 symfony [info] {sfWebDebugLogger} Action "test/index" 3382.98 ms (1)
+Mar 05 18:19:17 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:19:17 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:19:17 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:19:17 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:19:20 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:19:20 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:19:29 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (2, 1)
+Mar 05 18:19:29 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:19:29 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:19:29 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:19:29 symfony [info] {main} Get slot "title"
+Mar 05 18:19:29 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:19:29 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:19:29 symfony [info] {sfWebDebugLogger} Configuration 1.80 ms (9)
+Mar 05 18:19:29 symfony [info] {sfWebDebugLogger} Factories 21.46 ms (1)
+Mar 05 18:19:29 symfony [info] {sfWebDebugLogger} Action "test/index" 12118.07 ms (1)
+Mar 05 18:19:29 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.04 ms (3)
+Mar 05 18:19:29 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 15.49 ms (1)
+Mar 05 18:19:29 symfony [info] {sfWebResponse} Send content (33538 o)
+Mar 05 18:19:35 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:19:35 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:19:35 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:19:35 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:19:36 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:19:36 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:20:44 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (2, 1)
+Mar 05 18:20:44 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:20:44 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:20:44 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:20:44 symfony [info] {main} Get slot "title"
+Mar 05 18:20:44 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:20:44 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:20:44 symfony [info] {sfWebDebugLogger} Configuration 1.98 ms (9)
+Mar 05 18:20:44 symfony [info] {sfWebDebugLogger} Factories 20.55 ms (1)
+Mar 05 18:20:44 symfony [info] {sfWebDebugLogger} Action "test/index" 68277.40 ms (1)
+Mar 05 18:20:44 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.05 ms (3)
+Mar 05 18:20:44 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 15.94 ms (1)
+Mar 05 18:20:44 symfony [info] {sfWebResponse} Send content (33538 o)
+Mar 05 18:20:50 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:20:50 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:20:50 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:20:50 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:20:51 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:20:51 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:20:56 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (2, 1)
+Mar 05 18:20:56 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:20:56 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:20:56 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:20:56 symfony [info] {main} Get slot "title"
+Mar 05 18:20:56 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:20:56 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:20:56 symfony [info] {sfWebDebugLogger} Configuration 1.80 ms (9)
+Mar 05 18:20:56 symfony [info] {sfWebDebugLogger} Factories 21.93 ms (1)
+Mar 05 18:20:56 symfony [info] {sfWebDebugLogger} Action "test/index" 5889.61 ms (1)
+Mar 05 18:20:56 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.04 ms (3)
+Mar 05 18:20:56 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 19.48 ms (1)
+Mar 05 18:20:56 symfony [info] {sfWebResponse} Send content (33536 o)
+Mar 05 18:21:04 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:21:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:21:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:21:04 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:21:04 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:21:04 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:21:44 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (2, 1)
+Mar 05 18:21:44 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:21:44 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:21:44 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:21:44 symfony [info] {main} Get slot "title"
+Mar 05 18:21:44 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:21:44 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:21:44 symfony [info] {sfWebDebugLogger} Configuration 1.82 ms (9)
+Mar 05 18:21:44 symfony [info] {sfWebDebugLogger} Factories 19.97 ms (1)
+Mar 05 18:21:44 symfony [info] {sfWebDebugLogger} Action "test/index" 40466.16 ms (1)
+Mar 05 18:21:44 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.04 ms (3)
+Mar 05 18:21:44 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 14.11 ms (1)
+Mar 05 18:21:44 symfony [info] {sfWebResponse} Send content (33538 o)
+Mar 05 18:21:50 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:21:50 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:21:50 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:21:50 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:21:51 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:21:51 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:22:03 symfony [err] {Doctrine_Exception} Couldn't find class mapping1
+Mar 05 18:22:03 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 05 18:22:03 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:22:03 symfony [info] {sfWebDebugLogger} Configuration 56.22 ms (10)
+Mar 05 18:22:03 symfony [info] {sfWebDebugLogger} Factories 19.77 ms (1)
+Mar 05 18:22:03 symfony [info] {sfWebDebugLogger} Action "test/index" 12765.61 ms (1)
+Mar 05 18:22:03 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (2)
+Mar 05 18:22:45 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:22:45 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:22:45 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:22:45 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:22:48 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:22:48 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:22:58 symfony [err] {Doctrine_Exception} Couldn't find class mapping1
+Mar 05 18:22:58 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 05 18:22:58 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:22:58 symfony [info] {sfWebDebugLogger} Configuration 49.58 ms (10)
+Mar 05 18:22:58 symfony [info] {sfWebDebugLogger} Factories 21.77 ms (1)
+Mar 05 18:22:58 symfony [info] {sfWebDebugLogger} Action "test/index" 12737.77 ms (1)
+Mar 05 18:22:58 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (2)
+Mar 05 18:23:02 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:23:02 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:23:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:23:02 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:23:03 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:23:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:24:40 symfony [err] {Doctrine_Exception} Couldn't find class mapping1
+Mar 05 18:24:40 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 05 18:24:40 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:24:40 symfony [info] {sfWebDebugLogger} Configuration 52.50 ms (10)
+Mar 05 18:24:40 symfony [info] {sfWebDebugLogger} Factories 22.32 ms (1)
+Mar 05 18:24:40 symfony [info] {sfWebDebugLogger} Action "test/index" 97488.57 ms (1)
+Mar 05 18:24:40 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.04 ms (2)
+Mar 05 18:24:55 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:24:55 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:24:55 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:24:55 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:24:56 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:24:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:25:38 symfony [err] {Doctrine_Exception} Couldn't find class mapping1
+Mar 05 18:25:38 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 05 18:25:38 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:25:38 symfony [info] {sfWebDebugLogger} Configuration 60.16 ms (10)
+Mar 05 18:25:38 symfony [info] {sfWebDebugLogger} Factories 23.99 ms (1)
+Mar 05 18:25:38 symfony [info] {sfWebDebugLogger} Action "test/index" 42717.99 ms (1)
+Mar 05 18:25:38 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 05 18:25:43 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:25:43 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:25:43 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:25:43 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:25:44 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:25:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:25:51 symfony [err] {Doctrine_Exception} Couldn't find class mapping1
+Mar 05 18:25:52 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 05 18:25:52 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:25:52 symfony [info] {sfWebDebugLogger} Configuration 45.79 ms (10)
+Mar 05 18:25:52 symfony [info] {sfWebDebugLogger} Factories 21.46 ms (1)
+Mar 05 18:25:52 symfony [info] {sfWebDebugLogger} Action "test/index" 8982.67 ms (1)
+Mar 05 18:25:52 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Mar 05 18:25:58 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:25:58 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:25:58 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:25:58 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:25:59 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:25:59 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:27:21 symfony [err] {Doctrine_Exception} Couldn't find class mapping1
+Mar 05 18:27:21 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Mar 05 18:27:21 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:27:21 symfony [info] {sfWebDebugLogger} Configuration 55.31 ms (10)
+Mar 05 18:27:21 symfony [info] {sfWebDebugLogger} Factories 23.62 ms (1)
+Mar 05 18:27:21 symfony [info] {sfWebDebugLogger} Action "test/index" 82784.13 ms (1)
+Mar 05 18:27:21 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (2)
+Mar 05 18:27:25 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:27:25 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:27:25 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:27:25 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:27:27 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:27:27 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:27:37 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 18:27:43 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (0, 1)
+Mar 05 18:27:44 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (0, 2)
+Mar 05 18:27:44 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (0, 1)
+Mar 05 18:27:44 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:27:44 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:27:44 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:27:44 symfony [info] {main} Get slot "title"
+Mar 05 18:27:44 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:27:44 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:27:44 symfony [info] {sfWebDebugLogger} Configuration 1.68 ms (9)
+Mar 05 18:27:44 symfony [info] {sfWebDebugLogger} Factories 19.94 ms (1)
+Mar 05 18:27:44 symfony [info] {sfWebDebugLogger} Action "test/index" 18830.29 ms (1)
+Mar 05 18:27:44 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.10 ms (6)
+Mar 05 18:27:44 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 12.97 ms (1)
+Mar 05 18:27:44 symfony [info] {sfWebResponse} Send content (36944 o)
+Mar 05 18:28:11 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:28:11 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:28:11 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:28:11 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:28:11 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:28:11 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:28:12 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 18:28:12 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (0, 1)
+Mar 05 18:28:12 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (0, 2)
+Mar 05 18:28:12 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (2, 1)
+Mar 05 18:28:12 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:28:12 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:28:12 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:28:12 symfony [info] {main} Get slot "title"
+Mar 05 18:28:12 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:28:12 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:28:12 symfony [info] {sfWebDebugLogger} Configuration 2.22 ms (9)
+Mar 05 18:28:12 symfony [info] {sfWebDebugLogger} Factories 24.00 ms (1)
+Mar 05 18:28:12 symfony [info] {sfWebDebugLogger} Action "test/index" 1386.84 ms (1)
+Mar 05 18:28:12 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.05 ms (6)
+Mar 05 18:28:12 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 8.00 ms (1)
+Mar 05 18:28:12 symfony [info] {sfWebResponse} Send content (36941 o)
+Mar 05 18:28:35 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:28:35 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:28:35 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:28:35 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:28:36 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:28:36 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:28:37 symfony [info] {Doctrine_Connection_Statement} execute : DELETE FROM thread WHERE id = ? - (1)
+Mar 05 18:28:37 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:28:37 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:28:37 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:28:37 symfony [info] {main} Get slot "title"
+Mar 05 18:28:37 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:28:37 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:28:37 symfony [info] {sfWebDebugLogger} Configuration 1.82 ms (9)
+Mar 05 18:28:37 symfony [info] {sfWebDebugLogger} Factories 22.07 ms (1)
+Mar 05 18:28:37 symfony [info] {sfWebDebugLogger} Action "test/index" 1492.42 ms (1)
+Mar 05 18:28:37 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.04 ms (3)
+Mar 05 18:28:37 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 10.99 ms (1)
+Mar 05 18:28:37 symfony [info] {sfWebResponse} Send content (33513 o)
+Mar 05 18:29:21 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:29:21 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:29:21 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:29:21 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:29:23 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:29:23 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (2)
+Mar 05 18:29:50 symfony [info] {Doctrine_Connection_Statement} execute : DELETE FROM thread WHERE id = ? - (2)
+Mar 05 18:29:50 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:29:50 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:29:50 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:29:50 symfony [info] {main} Get slot "title"
+Mar 05 18:29:50 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:29:50 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:29:50 symfony [info] {sfWebDebugLogger} Configuration 1.97 ms (9)
+Mar 05 18:29:50 symfony [info] {sfWebDebugLogger} Factories 19.99 ms (1)
+Mar 05 18:29:50 symfony [info] {sfWebDebugLogger} Action "test/index" 28814.71 ms (1)
+Mar 05 18:29:50 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (3)
+Mar 05 18:29:50 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 15.14 ms (1)
+Mar 05 18:29:50 symfony [info] {sfWebResponse} Send content (33515 o)
+Mar 05 18:30:16 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:30:16 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:30:16 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:30:16 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:30:17 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:30:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (2)
+Mar 05 18:30:22 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 2 AND a.referencetype = 1) - ()
+Mar 05 18:30:22 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referenceid = ? WHERE id = ? - (, 1)
+Mar 05 18:30:22 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referencetype = ? WHERE id = ? - (, 1)
+Mar 05 18:30:22 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referenceid = ? WHERE id = ? - (, 2)
+Mar 05 18:30:22 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referencetype = ? WHERE id = ? - (, 2)
+Mar 05 18:30:22 symfony [info] {Doctrine_Connection_Statement} execute : DELETE FROM thread WHERE id = ? - (2)
+Mar 05 18:30:22 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:30:22 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:30:22 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:30:22 symfony [info] {main} Get slot "title"
+Mar 05 18:30:22 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:30:22 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:30:22 symfony [info] {sfWebDebugLogger} Configuration 1.66 ms (9)
+Mar 05 18:30:22 symfony [info] {sfWebDebugLogger} Factories 21.78 ms (1)
+Mar 05 18:30:22 symfony [info] {sfWebDebugLogger} Action "test/index" 5482.84 ms (1)
+Mar 05 18:30:22 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.07 ms (8)
+Mar 05 18:30:22 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 8.03 ms (1)
+Mar 05 18:30:22 symfony [info] {sfWebResponse} Send content (38774 o)
+Mar 05 18:34:02 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:34:02 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:34:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:34:02 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:34:03 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:34:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (2)
+Mar 05 18:34:04 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 2 AND a.referencetype = 1) - ()
+Mar 05 18:34:04 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread1 a WHERE (a.referenceid = 2 AND a.referencetype = 1) - ()
+Mar 05 18:34:04 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (0, 2)
+Mar 05 18:34:04 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:34:04 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:34:04 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:34:04 symfony [info] {main} Get slot "title"
+Mar 05 18:34:04 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:34:04 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:34:04 symfony [info] {sfWebDebugLogger} Configuration 1.63 ms (9)
+Mar 05 18:34:04 symfony [info] {sfWebDebugLogger} Factories 24.40 ms (1)
+Mar 05 18:34:04 symfony [info] {sfWebDebugLogger} Action "test/index" 1622.48 ms (1)
+Mar 05 18:34:04 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.05 ms (5)
+Mar 05 18:34:04 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 8.24 ms (1)
+Mar 05 18:34:04 symfony [info] {sfWebResponse} Send content (36717 o)
+Mar 05 18:34:46 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:34:46 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:34:46 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:34:46 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:34:47 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:34:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (2)
+Mar 05 18:35:21 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 2 AND a.referencetype = 1) - ()
+Mar 05 18:35:29 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread1 a WHERE (a.referenceid = 2 AND a.referencetype = 1) - ()
+Mar 05 18:35:32 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (0, 2)
+Mar 05 18:35:32 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:35:32 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:35:32 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:35:32 symfony [info] {main} Get slot "title"
+Mar 05 18:35:32 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:35:32 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:35:32 symfony [info] {sfWebDebugLogger} Configuration 2.11 ms (9)
+Mar 05 18:35:32 symfony [info] {sfWebDebugLogger} Factories 21.41 ms (1)
+Mar 05 18:35:32 symfony [info] {sfWebDebugLogger} Action "test/index" 46227.57 ms (1)
+Mar 05 18:35:32 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.06 ms (5)
+Mar 05 18:35:32 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 12.86 ms (1)
+Mar 05 18:35:32 symfony [info] {sfWebResponse} Send content (36720 o)
+Mar 05 18:35:43 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:35:43 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:35:43 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:35:43 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:35:44 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:35:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:35:45 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 18:35:45 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (0, 1)
+Mar 05 18:35:45 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (0, 2)
+Mar 05 18:35:45 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread1 a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 18:35:45 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread1 SET status = ? WHERE id = ? - (2, 1)
+Mar 05 18:35:45 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread1 SET status = ? WHERE id = ? - (2, 2)
+Mar 05 18:35:45 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (0, 1)
+Mar 05 18:35:45 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:35:45 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:35:45 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:35:45 symfony [info] {main} Get slot "title"
+Mar 05 18:35:45 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:35:45 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:35:45 symfony [info] {sfWebDebugLogger} Configuration 1.65 ms (9)
+Mar 05 18:35:45 symfony [info] {sfWebDebugLogger} Factories 19.85 ms (1)
+Mar 05 18:35:45 symfony [info] {sfWebDebugLogger} Action "test/index" 1232.69 ms (1)
+Mar 05 18:35:45 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.08 ms (9)
+Mar 05 18:35:45 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 13.72 ms (1)
+Mar 05 18:35:45 symfony [info] {sfWebResponse} Send content (40354 o)
+Mar 05 18:36:05 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:36:05 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:36:05 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:36:05 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:36:06 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:36:06 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:36:06 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 18:36:07 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (1, 1)
+Mar 05 18:36:07 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET status = ? WHERE id = ? - (1, 2)
+Mar 05 18:36:07 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread1 a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 18:36:07 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread1 SET status = ? WHERE id = ? - (1, 1)
+Mar 05 18:36:07 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread1 SET status = ? WHERE id = ? - (1, 2)
+Mar 05 18:36:07 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE thread SET state = ? WHERE id = ? - (1, 1)
+Mar 05 18:36:07 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:36:07 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:36:07 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:36:07 symfony [info] {main} Get slot "title"
+Mar 05 18:36:07 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:36:07 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:36:07 symfony [info] {sfWebDebugLogger} Configuration 1.57 ms (9)
+Mar 05 18:36:07 symfony [info] {sfWebDebugLogger} Factories 20.65 ms (1)
+Mar 05 18:36:07 symfony [info] {sfWebDebugLogger} Action "test/index" 1322.83 ms (1)
+Mar 05 18:36:07 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.09 ms (9)
+Mar 05 18:36:07 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 12.17 ms (1)
+Mar 05 18:36:07 symfony [info] {sfWebResponse} Send content (40354 o)
+Mar 05 18:36:27 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /test with parameters array (  'module' => 'test',  'action' => 'index',)
+Mar 05 18:36:27 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Mar 05 18:36:27 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Mar 05 18:36:27 symfony [info] {testActions} Call "testActions->executeIndex()"
+Mar 05 18:36:28 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Mar 05 18:36:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.title AS t__title, t.state AS t__state, t.posts_status_number AS t__posts_status_number FROM thread t WHERE (t.id = ?) LIMIT 1 - (1)
+Mar 05 18:36:30 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 18:36:30 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referenceid = ? WHERE id = ? - (, 1)
+Mar 05 18:36:30 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referencetype = ? WHERE id = ? - (, 1)
+Mar 05 18:36:30 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referenceid = ? WHERE id = ? - (, 2)
+Mar 05 18:36:30 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE another_thread SET referencetype = ? WHERE id = ? - (, 2)
+Mar 05 18:36:30 symfony [info] {Doctrine_Connection_Mysql} query : SELECT a.id AS a__id, a.title AS a__title, a.status AS a__status, a.referenceid AS a__referenceid, a.referencetype AS a__referencetype FROM another_thread1 a WHERE (a.referenceid = 1 AND a.referencetype = 1) - ()
+Mar 05 18:36:30 symfony [info] {Doctrine_Connection_Statement} execute : DELETE FROM another_thread1 WHERE id = ? - (1)
+Mar 05 18:36:30 symfony [info] {Doctrine_Connection_Statement} execute : DELETE FROM another_thread1 WHERE id = ? - (2)
+Mar 05 18:36:30 symfony [info] {Doctrine_Connection_Statement} execute : DELETE FROM thread WHERE id = ? - (1)
+Mar 05 18:36:30 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/modules/test/templates/indexSuccess.php"
+Mar 05 18:36:30 symfony [info] {sfPHPView} Decorate content with "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:36:30 symfony [info] {sfPHPView} Render "/home/mustafa/sfprojects/jobeet/apps/frontend/templates/layout.php"
+Mar 05 18:36:30 symfony [info] {main} Get slot "title"
+Mar 05 18:36:30 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Mar 05 18:36:30 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Mar 05 18:36:30 symfony [info] {sfWebDebugLogger} Configuration 1.78 ms (9)
+Mar 05 18:36:30 symfony [info] {sfWebDebugLogger} Factories 23.40 ms (1)
+Mar 05 18:36:30 symfony [info] {sfWebDebugLogger} Action "test/index" 2548.55 ms (1)
+Mar 05 18:36:30 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.15 ms (11)
+Mar 05 18:36:30 symfony [info] {sfWebDebugLogger} View "Success" for "test/index" 15.01 ms (1)
+Mar 05 18:36:30 symfony [info] {sfWebResponse} Send content (42139 o)

@@ -52,38 +52,80 @@ abstract class BaseThread extends sfDoctrineRecord
              'foreign' => 'thread_id'));
 
         $attributeupdatable0 = new AttributeUpdatable(array(
-             'referenceModel' => 'AnotherThread',
-             'onDelete' => 'SET NULL',
-             'locateMapping' => 
+             'referencesModels' => 
              array(
-              'locateMapping1' => 
+              'AnotherThread' => 
               array(
-              'referenceLocateAttribute' => 'referenceId',
-              'localLocateAttribute' => 'id',
+              'onDelete' => 'SET NULL',
+              'locateMapping' => 
+              array(
+               'locateMapping1' => 
+               array(
+               'referenceLocateAttribute' => 'referenceId',
+               'localLocateAttribute' => 'id',
+               ),
+               'locateMapping2' => 
+               array(
+               'referenceLocateAttribute' => 'referenceType',
+               'localLocateValue' => 1,
+               ),
               ),
-              'locateMapping2' => 
+              'updateMapping' => 
               array(
-              'referenceLocateAttribute' => 'referenceType',
-              'localLocateValue' => 1,
+               'mapping1' => 
+               array(
+               'localAttribute' => 'state',
+               'referenceAttribute' => 'status',
+               'localValues' => 
+               array(
+                0 => 0,
+                1 => 1,
+                2 => 2,
+               ),
+               'referenceValues' => 
+               array(
+                0 => 0,
+                1 => 1,
+                2 => 0,
+               ),
+               ),
               ),
-             ),
-             'updateMapping' => 
-             array(
-              'mapping1' => 
-              array(
-              'localAttribute' => 'state',
-              'referenceAttribute' => 'status',
-              'localValues' => 
-              array(
-               0 => 0,
-               1 => 1,
-               2 => 2,
               ),
-              'referenceValues' => 
+              'AnotherThread1' => 
               array(
-               0 => 0,
-               1 => 1,
-               2 => 2,
+              'onDelete' => 'CASCADE',
+              'locateMapping' => 
+              array(
+               'locateMapping1' => 
+               array(
+               'referenceLocateAttribute' => 'referenceId',
+               'localLocateAttribute' => 'id',
+               ),
+               'locateMapping2' => 
+               array(
+               'referenceLocateAttribute' => 'referenceType',
+               'localLocateValue' => 1,
+               ),
+              ),
+              'updateMapping' => 
+              array(
+               'mapping1' => 
+               array(
+               'localAttribute' => 'state',
+               'referenceAttribute' => 'status',
+               'localValues' => 
+               array(
+                0 => 0,
+                1 => 1,
+                2 => 2,
+               ),
+               'referenceValues' => 
+               array(
+                0 => 2,
+                1 => 1,
+                2 => 0,
+               ),
+               ),
               ),
               ),
              ),
