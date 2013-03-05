@@ -19,7 +19,7 @@ class CloneListner extends Doctrine_Record_Listener
   }
   public function postInsert(Doctrine_Event $event) 
   {
-      echo "dddddddddd";die();
+      
       $invoker=$event->getInvoker();
       $className=$this->_options['className'];
       $obj=new $className();

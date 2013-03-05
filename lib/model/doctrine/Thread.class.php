@@ -12,4 +12,5 @@
  */
 class Thread extends BaseThread
 {
+    const THREAD_TYPE=1;
 }

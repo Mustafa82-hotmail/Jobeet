@@ -51,10 +51,23 @@ JobeetCategoryAffiliate:
     JobeetAffiliate: { onDelete: CASCADE, local: affiliate_id, foreign: id }
     
 Thread:
+  actAs:
+    AttributeUpdatable:
+      referenceModel: AnotherThread
+      onDelete: SET NULL
+      locateMapping:
+        locateMapping1: {referenceLocateAttribute: referenceId, localLocateAttribute: id}
+        locateMapping2: {referenceLocateAttribute: referenceType, localLocateValue: <?php echo Thread::THREAD_TYPE;?>}
+      updateMapping:
+        mapping1: {localAttribute: state, referenceAttribute: status, localValues: [0,1,2], referenceValues: [0,1,2]}
+      
   columns:
     title:
       type: string(255)
       notnull: true
+    state:
+      type: string(255)
+      notnull: false
     posts_status_number:
       type: array
 
@@ -63,6 +76,13 @@ AnotherThread:
     title:
       type: string(255)
       notnull: true 
+    status:
+      type: string(255)
+      notnull: false
+    referenceId:
+      type: integer
+    referenceType:
+      type: string(255)
       
       
       

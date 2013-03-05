@@ -17,12 +17,14 @@ abstract class BaseThreadForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'                  => new sfWidgetFormInputHidden(),
       'title'               => new sfWidgetFormInputText(),
+      'state'               => new sfWidgetFormInputText(),
       'posts_status_number' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'                  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'title'               => new sfValidatorString(array('max_length' => 255)),
+      'state'               => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'posts_status_number' => new sfValidatorPass(array('required' => false)),
     ));
 

@@ -14,11 +14,13 @@ abstract class BaseThreadFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'title'               => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'state'               => new sfWidgetFormFilterInput(),
       'posts_status_number' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'title'               => new sfValidatorPass(array('required' => false)),
+      'state'               => new sfValidatorPass(array('required' => false)),
       'posts_status_number' => new sfValidatorPass(array('required' => false)),
     ));
 
@@ -41,6 +43,7 @@ abstract class BaseThreadFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'                  => 'Number',
       'title'               => 'Text',
+      'state'               => 'Text',
       'posts_status_number' => 'Text',
     );
   }

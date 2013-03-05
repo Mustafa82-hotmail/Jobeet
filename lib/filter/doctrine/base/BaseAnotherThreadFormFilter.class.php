@@ -13,11 +13,17 @@ abstract class BaseAnotherThreadFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'title' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'title'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'status'        => new sfWidgetFormFilterInput(),
+      'referenceId'   => new sfWidgetFormFilterInput(),
+      'referenceType' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'title' => new sfValidatorPass(array('required' => false)),
+      'title'         => new sfValidatorPass(array('required' => false)),
+      'status'        => new sfValidatorPass(array('required' => false)),
+      'referenceId'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'referenceType' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('another_thread_filters[%s]');
@@ -37,8 +43,11 @@ abstract class BaseAnotherThreadFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'    => 'Number',
-      'title' => 'Text',
+      'id'            => 'Number',
+      'title'         => 'Text',
+      'status'        => 'Text',
+      'referenceId'   => 'Number',
+      'referenceType' => 'Text',
     );
   }
 }

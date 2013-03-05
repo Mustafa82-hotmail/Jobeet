@@ -17,9 +17,46 @@ class testActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-      $post=  Doctrine_Core::getTable("Post")->find(3);
-      $post->setThreadId(2);
-      $post->save();
+      $thread=Doctrine_Core::getTable("Thread")->find(1);
+      $thread->delete();
+      /*$thread=Doctrine_Core::getTable("Thread")->find(3);
+      
+      $thread->setState(10);
+      $thread->save();
+      /*$anotherThread=new AnotherThread();
+      $anotherThread->setTitle("AnotherThread");
+      $anotherThread->setStatus(0);
+      $anotherThread->setReferenceId(4);
+      $anotherThread->setReferenceType(Thread::THREAD_TYPE);
+      $anotherThread->save();
+      
+   /*$thread=Doctrine_Core::getTable("Thread")->find(1);
+   $thread->delete();
+/*      $thread->setState(1);
+      $array=$thread->getModified();
+      $thread->save();
+      $array=$thread->getModified();
+      /*$thread=Doctrine_Core::getTable("Thread")->find(1);
+      $thread->setState(1);
+      $thread->save();
+      /*$anotherThread=new AnotherThread();
+      $anotherThread->setTitle("AnotherThread");
+      $anotherThread->setStatus(0);
+      $anotherThread->setReferenceId(1);
+      $anotherThread->setReferenceType(Thread::THREAD_TYPE);
+      $anotherThread->save();
+/*      $thread=new Thread();
+      $thread->setTitle("thread1");
+      $thread->setState(0);
+      $thread->save();
+              
+      //$post=  Doctrine_Core::getTable("Post")->find(1);
+      //$post->setThreadId(2);
+      //$post->delete();
+      //$post->setPostType(1);
+      //$post->save();
+      
+      
       /*$thread=new Thread();
       $thread->setTitle("Hi");
       $thread->save();
@@ -28,7 +65,17 @@ class testActions extends sfActions
       $post->setThreadId(1);
       $post->setPostType(0);
       $post->save();*/
-      $thread = Doctrine::getTable("Thread")->find(1);
+ /* $thread = Doctrine::getTable("Thread")->find(1);
+      foreach($thread->get("posts_status_number") as $key => $value)
+      {
+          echo $key."<br/>";
+          foreach($value as $val)
+          {
+              echo $val."-";
+          }
+          echo "<br/>";
+      }
+      /*$thread = Doctrine::getTable("Thread")->find(1);
       foreach($thread->get("posts_status_number") as $key => $value)
       {
           echo $key."<br/>";

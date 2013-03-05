@@ -23,9 +23,6 @@ class AutoCompletable extends Doctrine_Template{
  
   public function setTableDefinition()
   {
-      
-      
-      
       if(isset($this->_options['relation']))
       {        
           

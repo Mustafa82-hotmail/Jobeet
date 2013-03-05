@@ -12,4 +12,5 @@
  */
 class Post extends BasePost
 {
+    const POSTTYPE=1;
 }
