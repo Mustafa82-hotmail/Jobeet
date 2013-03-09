@@ -18,6 +18,10 @@ class testActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
 	/* This is form Hotmail contributer*/
+
+
+
+	/* This is from Hotmail contributer 2*/
 /*      $thread=Doctrine_Core::getTable("Thread")->find(1);
       
       $thread->delete();
